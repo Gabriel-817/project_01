@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include '../header.html' %}
+</head>
+<body>
+    <div class="container-fluid ">
+    <header class="masthead mb-auto">
+        <div class="inner">
+          <h1 class="masthead-brand">CCTV&Criminal</h1>
+          <nav class="nav nav-masthead justify-content-end">
+            <a class="navbar-brand" href="#">{{request.session.username}}     is log-in now!!    </a>
+            <a class="nav-link active" href="/hero/main_vis">Log-out</a>
+            <a class="nav-link active" href="/hero/menu_list">Menu</a>
+          </nav>
+        </div>
+    </header>
+    <div class="row justify-content-center">
+            
+            
+      <main role="main" class="inner cover"  style = 'margin-top: 100px;'>
+          
+          <h1>1. Each Gu's CCTV's Variation Condition</h1><br/> <br/>
+          <h3> ★ Chart ★ </h3>
+          <hr/>
+          <form action="/hero/gu_cctv" method="get">
+      
+          <div class="form-inline">
+              
+            <img src="{{gu_chart_1}}" width = "800" height = "450" />
+          </div>
+
+          <div class='form-inline' style="margin-bottom:5px; margin-top:20px">
+             
+              <input style = "width:200px; height:50px; font-size:28px; margin-left:600px" type="submit" class="btn btn-danger" value="Go Back">
+          </div>
+
+          </form>
+      </main>
+  </div>   
+</div> 
+
+
+</body>
+</html>
+
+
+
+   
+
+
+
+
+

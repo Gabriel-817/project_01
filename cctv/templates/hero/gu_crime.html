@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include '../header.html' %}
+</head>
+<body>
+    <div class="container-fluid ">
+    <header class="masthead mb-auto">
+        <div class="inner">
+          <h1 class="masthead-brand">CCTV&Criminal</h1>
+          <nav class="nav nav-masthead justify-content-end">
+            <a class="navbar-brand" href="#">{{request.session.username}}     is log-in now!!    </a>
+            <a class="nav-link active" href="/hero/main_vis">Log-out</a>
+            <a class="nav-link active" href="/hero/menu_list">Menu</a>
+          </nav>
+        </div>
+    </header>
+    <div class="row justify-content-center">
+            
+            
+      <main role="main" class="inner cover"  style = 'margin-top: 250px; margin-right:20%;'>
+          
+          <h1>2. Gu's Crime_Occur&Arrest_No </h1>
+          <br/> <br/>
+          <h4> Please insert Gu's name here.</h4>
+          <hr/>
+          <form action="/hero/gu_crime2" method="get">
+      
+          <div class="form-inline">
+              
+              <input type="text" name="gu_name_c" style="width:400px; height:50px; margin-bottom:10px" placeholder = "(예) 강남구"/>
+          </div>
+
+          
+
+
+          <div class='form-inline' style="margin-bottom:5px;">
+             
+              <input style = "width:200px; margin-left: 100px; height:50px; font-size:28px" type="submit" class="btn btn-primary" value="Search">
+          </div>
+
+          </form>
+      </main>
+  </div>   
+</div> 
+
+
+</body>
+</html>
+
+
+    

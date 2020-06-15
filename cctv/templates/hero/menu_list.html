@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include '../header.html' %}
+</head>
+
+<body>
+    <div class="container-fluid ">
+        <header class="masthead mb-auto">
+            <div class="inner">
+              <h1 class="masthead-brand">CCTV&Criminal</h1>
+              <nav class="nav nav-masthead justify-content-end">
+                <a class="navbar-brand" href="#">{{request.session.username}}     is log-in now!!    </a>
+                <a class="nav-link active" href="/hero/main_vis">Log-out</a>
+                <a class="nav-link active" href="/hero/menu_list">Menu</a>         
+              </nav>
+            </div>
+        </header>
+        
+
+        <div class="container" style = 'width:1200px; height:800px'>
+            <div class= "container" style = 'width:1200px; height:350px'>
+                <img src = '/static/img/seoul.png' width = '600px' height = '500px' style = 'margin-top:200px;margin-right:400px'>
+            </div>
+            
+            <div class= "container" style = 'width:600px; height:50px; margin-left:700px'>
+                <div style =  'width:400px;height:50px'>
+                    <a href="/hero/gu_cctv" class="btn btn-light" style = 'width:400px;height:50px'>
+                        <div style = 'font-size: 25px;'><img src = '/static/img/n1.png' width = '35px' height = '30px'> Each Gu's CCTV's Variation</div>
+                    </a>
+                </div><br/><br/>
+
+                <div style = 'width:400px;height:50px'>
+                    <a href="/hero/gu_crime" class="btn btn-light" style = 'width:400px;height:50px'>
+                        <div style = 'font-size: 25px;'><img src = '/static/img/n2.png' width = '35px' height = '30px'> Gu's Crime Occur&Arrest No</div>
+                    </a>
+                </div><br/><br/>
+                
+                <div style = 'width:400px;height:50px'>
+                <a href="/hero/gu_comp" class="btn btn-light" style = 'width:400px;height:50px'>
+                    <div style = 'font-size: 25px;'><img src = '/static/img/n1.png' width = '35px' height = '30px'><img src = '/static/img/n2.png' width = '30px' height = '30px'> Comparison & Analysis</div>
+                </a>
+                </div>
+            </div>
+        </div>
+
+</body>
+</html>

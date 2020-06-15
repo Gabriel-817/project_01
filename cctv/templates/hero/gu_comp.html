@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include '../header.html' %}
+    
+</head>
+<body>
+    <div class="container-fluid ">
+    <header class="masthead mb-auto">
+        <div class="inner">
+          <h1 class="masthead-brand">CCTV&Criminal</h1>
+          <nav class="nav nav-masthead justify-content-end">
+            <a class="navbar-brand" href="#">{{request.session.username}}     is log-in now!!    </a>
+            <a class="nav-link active" href="/hero/main_vis">Log-out</a>
+            <a class="nav-link active" href="/hero/menu_list">Menu</a>
+          </nav>
+        </div>
+    </header>
+    <div class="row justify-content-center">
+            
+            
+      <main role="main" class="inner cover"  style = 'margin-top: 100px;'>
+          
+          <h1>3. ①, ② Comparison & Analysis </h1><br/> <br/>
+          <h5> ①, ② Data about Comparison & Analysis</h5>
+          <hr/>
+          <form action="/hero/gu_chart_3" method="GET">
+      
+            
+
+
+        
+
+                <p> ⑴ Each Gu's Install CCTV's Total_No(2011~2018) 
+
+                  
+                    <input style = "width:140px; margin-top:10px; margin-left:10px; height:50px; font-size:28px" type="submit" class="btn btn-primary" value="Chart" name="btn">
+                  
+
+                </p>
+                
+                <table border ='10'>
+                <td width = "150" height = "30" align = "center"> Rank </td>
+                <td width = "150" height = "30" align = "center"> Gu's NAME</td>
+                <td width = "200" height = "30" align = "center"> CCTV's No </td>
+                
+                {% for one in data_cctv %}
+                <tr>
+                <td width = "150" height = "30" align = "center"> {{one.0}} </td>
+                <td width = "150" height = "30" align = "center" > {{one.1}} </td>
+                <td width = "200" height = "30" align = "center" > {{one.2}} </td>
+                
+                </tr>
+
+            {% endfor %}
+            </table> 
+
+              <br/> <br/>
+            <p> ⑵ Each Gu's ARREST_Rate(2011~2018) </p>
+                
+            <table border ='10'>
+            <td width = "150" height = "30" align = "center"> Rank </td>
+            <td width = "150" height = "30" align = "center"> Gu's Name</td>
+            <td width = "200" height = "30" align = "center"> Crime Arr_Rate(%) </td>
+            
+            {% for two in data_rate %}
+            <tr>
+            <td width = "150" height = "30" align = "center"> {{two.0}} </td>
+            <td width = "150" height = "30" align = "center" > {{two.1}} </td>
+            <td width = "200" height = "30" align = "center" > {{two.2}} </td>
+            </tr>
+
+        {% endfor %}
+        </table> 
+                
+
+
+
+          </form>
+      </main>
+  </div>   
+</div> 
+
+
+</body>
+</html>

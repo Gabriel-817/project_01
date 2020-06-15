@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include '../header.html' %}
+    
+</head>
+<body>
+    <div class="container-fluid ">
+    <header class="masthead mb-auto">
+        <div class="inner">
+          <h1 class="masthead-brand">CCTV&Criminal</h1>
+          <nav class="nav nav-masthead justify-content-end">
+            <a class="navbar-brand" href="#">{{request.session.username}}     is log-in now!!    </a>
+            <a class="nav-link active" href="/hero/main_vis">Log-out</a>
+            <a class="nav-link active" href="/hero/menu_list">Menu</a>
+          </nav>
+        </div>
+    </header>
+    <div class="row justify-content-center">
+            
+            
+      <main role="main" class="inner cover"  style = 'margin-top: 130px;'>
+          
+          <h1>2.Gu's Crime_Occur_NO and Crime_Arrest_NO</h1><br/> <br/>
+          <h5> Please insult Gu's name here.</h5>
+          <h6> If you wanna know about other Gu's Crime Occur & Arrest conditions, insert other Gu's name & click "Search"</h6>
+          <h6> If you wanna see a chart, insert other Gu's name & click "Chart" </h6>
+          <hr/>
+          <form action="/hero/gu_crime2" method="get">
+      
+          <div class="form-inline">
+              
+              <input type="text" name="gu_name_c" style="width:400px; height:50px; margin-bottom:10px" placeholder= "(예) 강남구"/>
+          </div>
+
+          
+
+
+          <div class='form-inline' style="margin-bottom:20px;">
+             
+            <input style = "width:195px; height:50px; font-size:28px" type="submit" class="btn btn-primary" value="Search" name="btn">
+            <input style = "width:195px; margin-left:10px; height:50px; font-size:28px" type="submit" class="btn btn-primary" value="Chart" name="btn">
+          </div>
+
+            <p> {{gu_name_c}}'s Crime Occur & Arrest No. per Year</p>
+            
+            <table border ='10'>
+              <td width = "300" height = "30" align = "center"> Year</td>
+            <td width = "300" height = "30" align = "center"> Occur_No</td>
+            <td width = "300" height = "30" align = "center"> Arrest_No</td>
+            
+            {% for one in gu_list_c %}
+            
+            <tr>
+            <td width = "300" height = "30" align = "center"> {{one.0}} </td>
+            <td width = "300" height = "30" align = "center" > {{one.2}} </td>
+            <td width = "300" height = "30" align = "center" > {{one.1}} </td>
+            
+            </tr>
+            {% endfor %}
+        </table> 
+
+          </form>
+      </main>
+  </div>   
+</div> 
+
+
+</body>
+</html>
